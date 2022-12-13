@@ -12,15 +12,14 @@ int number = int.Parse(Console.ReadLine()!);
 Console.WriteLine(Sum(number));
 int Sum(int number)
 {
-    int array = Convert.ToString(number).Length;
-    int totalresult = 0;
+    //int array = Convert.ToString(number).Length;
+    int result = 0;
 
-    for (int i = 0; i < array; i++)
+    while (number > 0)
     {
-        int result = number - number % 10;
-        totalresult += (number - result);
-        number = number / 10;
+        result += number % 10; // result = result + number % 10
+        number /= 10; // number = number / 10
     }
-    return totalresult;
+    return result;
 }
 
